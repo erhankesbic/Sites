@@ -128,3 +128,10 @@ nav ul li a:hover {
     border-radius: 0.5em;
     
 }
+
+#login-form h1, #register-form h1 {
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+    margin: 0 0 20px 0;
+}
