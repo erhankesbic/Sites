@@ -22,7 +22,7 @@ include 'db.php';
                         <?php if ($is_logged_in): ?>
                         <li><a href="dashboard.php">Startseite</a></li>
                         <li><a href="training.php">Training</a></li>
-                        <li><a href="ernährung.php">Ernährung</a></li>
+                        <li><a href="ernaehrung.php">Ernährung</a></li>
                         <li><a href="profil.php">Profil</a></li>
                         <li><a href="logout.php">Logout</a></li>
                         <?php else: ?>
