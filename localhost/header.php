@@ -16,7 +16,7 @@ include 'db.php';
         <!-- Header -->
         <header>
             <div class="header-content">
-                <img src="SG.png" alt="Beschreibung des Bildes" class="logo" width="200" height="100">    
+                <img src="SG.png" alt="Beschreibung des Bildes" class="logo" width="200" height="100" >    
                 <nav>
                     <ul>
                         <?php if ($is_logged_in): ?>

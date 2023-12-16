@@ -1,8 +1,8 @@
 
 /* Grundlegende Stil-Reset */
 * {
-    margin: 10;
-    padding: 10;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -15,10 +15,11 @@ body, html {
 }
 
 .header-content {
-    display: flex;
-    justify-content: space-between; /* Dies ordnet die Elemente am Anfang und am Ende des Containers an */
-    align-items: center; /* Dies zentriert die Elemente vertikal */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
 }
+
 
 
 
@@ -28,6 +29,7 @@ body, html {
     margin: auto;
     overflow: hidden;
     padding: 0 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Header und Navigation */
@@ -41,10 +43,19 @@ header {
 
 /* Navigation links */
 nav ul {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
     padding: 0;
     list-style: none;
-    text-align: center;
 }
+
+@media (max-width: 768px) {
+    nav ul {
+        grid-auto-flow: row;
+    }
+}
+
 
 nav ul li {
     display: inline;
@@ -62,17 +73,6 @@ nav ul li a:hover {
     background-color: #ff0000; /* Red background on hover */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        width: 95%;
-    }
-
-    nav ul li {
-        display: block;
-        padding: 10px;
-    }
-}
 
 
 #email, #password {
@@ -86,12 +86,11 @@ nav ul li a:hover {
     border-radius: 0.5em;
 }
 
-.container-submit-btn{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container-submit-btn {
+    display: grid;
+    place-items: center;
 }
+
 
 
 .submit-btn
@@ -134,4 +133,92 @@ nav ul li a:hover {
     color: #fff;
     font-weight: normal;
     margin: 0 0 20px 0;
+}
+
+#profil-form {
+    background: #444; /* Leichter Kontrast zum Hintergrund */
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    margin: 20px auto;
+}
+
+#profil-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+#profil-form input[type="text"],
+#profil-form input[type="date"],
+#profil-form input[type="number"],
+#profil-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+    color: #333;
+}
+
+#modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(131, 131, 131, 0.3);
+    display: grid;
+    place-items: center; /* Zentriert den Inhalt */
+}
+
+#modal-content {
+    position: relative; /* Ermöglicht die Positionierung des Schließ-Buttons relativ zum Modal-Inhalt */
+    background-color: #ffffffee;
+    color: #333333;
+    padding: 20px;
+    border-radius: 5px;
+    width: auto; /* Oder eine spezifische Breite nach Bedarf */
+    max-width: 300px; /* Maximale Breite, um das Modal zu begrenzen */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Schatten für Tiefe */
+    margin: auto;
+}
+
+.close-container {
+    text-align: right; /* Richtet den Schließ-Button rechts aus */
+    width: 100%;
+}
+
+#close-modal {
+    cursor: pointer;
+    color: #000; /* Ändern Sie die Farbe nach Bedarf */
+    font-size: 1.5em;
+    display: inline-block; /* Entfernt die Float-Eigenschaft */
+    margin: 0 10px 10px 0; /* Abstand oben und rechts für den Button */
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
